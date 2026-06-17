@@ -2,18 +2,11 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { isLoggedIn } from './utils/auth'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Dashboard from './pages/Dashboard'
 import PaymentForm from './components/PaymentForm'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   return isLoggedIn() ? <>{children}</> : <Navigate to="/login" />
-}
-
-function Dashboard() {
-  return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
-    </div>
-  )
 }
 
 function SendMoney() {
