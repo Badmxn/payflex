@@ -3,6 +3,7 @@ import { isLoggedIn } from './utils/auth'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
+import KYC from './pages/KYC'
 import PaymentForm from './components/PaymentForm'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         <Route path="/send" element={<PrivateRoute><SendMoney /></PrivateRoute>} />
         <Route path="/history" element={<PrivateRoute><History /></PrivateRoute>} />
+        <Route path="/kyc" element={<PrivateRoute><KYC /></PrivateRoute>} />
       </Routes>
     </BrowserRouter>
   )
