@@ -23,8 +23,8 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="bg-white p-8 rounded-2xl shadow-sm w-full max-w-sm">
-        <h1 className="text-2xl font-bold mb-2">Welcome back</h1>
-        <p className="text-gray-500 text-sm mb-6">Login to your PayFlex account</p>
+      <h1 className="text-2xl font-bold mb-2">Welcome back to Rova</h1>
+      <p className="text-gray-500 text-sm mb-6">Login to your Rova account</p>
 
         {error && (
           <div className="bg-red-50 text-red-600 text-sm p-3 rounded-lg mb-4">

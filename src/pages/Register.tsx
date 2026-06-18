@@ -24,8 +24,7 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="bg-white p-8 rounded-2xl shadow-sm w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-2">Create account</h1>
-        <p className="text-gray-500 text-sm mb-6">Join PayFlex today</p>
-
+        <p className="text-gray-500 text-sm mb-6">Join Rova today</p>
         {error && (
           <div className="bg-red-50 text-red-600 text-sm p-3 rounded-lg mb-4">
             {error}
