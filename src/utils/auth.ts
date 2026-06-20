@@ -7,7 +7,8 @@ export const register = async (data: {
   role: string
 }) => {
   const res = await api.post('/auth/register', data)
-  localStorage.setItem('token', res.data.token)
+  localStorage.setItem('token', res.data.accessToken)
+  localStorage.setItem('refreshToken', res.data.refreshToken)
   localStorage.setItem('user', JSON.stringify(res.data.user))
   return res.data
 }
@@ -17,13 +18,19 @@ export const login = async (data: {
   password: string
 }) => {
   const res = await api.post('/auth/login', data)
-  localStorage.setItem('token', res.data.token)
+  localStorage.setItem('token', res.data.accessToken)
+  localStorage.setItem('refreshToken', res.data.refreshToken)
   localStorage.setItem('user', JSON.stringify(res.data.user))
   return res.data
 }
 
-export const logout = () => {
+export const logout = async () => {
+  const refreshToken = localStorage.getItem('refreshToken')
+  try {
+    await api.post('/auth/logout', { refreshToken })
+  } catch {}
   localStorage.removeItem('token')
+  localStorage.removeItem('refreshToken')
   localStorage.removeItem('user')
   window.location.href = '/login'
 }
